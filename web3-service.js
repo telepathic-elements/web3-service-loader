@@ -7,10 +7,9 @@ export class Web3Service {
         if(!window.Web3Service.loading){
             window.Web3Service.loading = true;
             if(!Web3Service.instance){
-                let data = await (await fetch("webcomponents/web3-service/web3.min.js")).text();
+                let data = await (await fetch("//telepathic-elements/web3-service/web3.min.js")).text();
                 await eval(data);
                 Web3Service.instance = await new Web3(provider);
-                //TODO:  Reconnect on websocket disconnect
             }
             window.Web3Service.loading = false;
         }
