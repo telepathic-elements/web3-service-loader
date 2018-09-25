@@ -32,7 +32,7 @@ export class Web3ServiceLoader {
         if(!window.Web3Service.loading){
             window.Web3Service.loading = true;
             if(!Web3ServiceLoader.instance){
-                let data = await (await fetch("./web3-service-loader/web3.min.js")).text();
+                let data = await (await fetch("https://telepathic-elements.github.io/web3-service-loader/web3.min.js")).text();
                 await eval(data);
                 Web3ServiceLoader.instance = await new Web3(provider);
             }
